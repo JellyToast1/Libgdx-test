@@ -31,7 +31,7 @@ public class MyGdxGameTest_glReadPixels extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
-		Gdx.graphics.setContinuousRendering(false);
+		//Gdx.graphics.setContinuousRendering(false);
 
 
 		//allocating buffers
