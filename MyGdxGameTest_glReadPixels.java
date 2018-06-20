@@ -30,7 +30,7 @@ public class MyGdxGameTest_glReadPixels extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");// Gdx.files.internal("badlogic.jpg"), Pixmap.Format.RGBA8888,false);
+		img = new Texture("badlogic.jpg");
 		Gdx.graphics.setContinuousRendering(false);
 
 
