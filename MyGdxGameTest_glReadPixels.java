@@ -50,14 +50,14 @@ public class MyGdxGameTest_glReadPixels extends ApplicationAdapter {
 	private void readPixels1() { //this will work
 		Gdx.app.log("readPixels1 ##Gdx.gl","start\n\n---");
 		Gdx.gl.glPixelStorei(GL20.GL_PACK_ALIGNMENT, 1);
-		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, directlyAllocatedBuffer);
+		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, directlyAllocatedBuffer); //glReadPixels(0, 0, 500, 400, GL_RGBA, GL_UNSIGNED_BYTE, (void *) 0xa0a34010);
 		Gdx.app.log("readPixels1 to directlyAllocatedBuffer","complete\n\n===");
 	}
 
 	private void readPixels2() { //this will work
 		Gdx.app.log("readPixels2 ##Gdx.gl","start\n\n---\n\n --- ");
 		Gdx.gl.glPixelStorei(GL20.GL_PACK_ALIGNMENT, 1);
-		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, pixmapByteBuffer);
+		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, pixmapByteBuffer); //glReadPixels(0, 0, 500, 400, GL_RGBA, GL_UNSIGNED_BYTE, (void *) 0xa0900000);
 		Gdx.app.log("readPixels2 to pixmapByteBuffer","complete\n\n===");
 
 	}
@@ -65,28 +65,28 @@ public class MyGdxGameTest_glReadPixels extends ApplicationAdapter {
 	private void readPixels3() { //this will work
 		Gdx.app.log("readPixels3 ##GLES20","start\n\n---");
 		Gdx.gl.glPixelStorei(GL20.GL_PACK_ALIGNMENT, 1);
-		GLES20.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, buffer);
+		GLES20.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, buffer); //glReadPixels(0, 0, 500, 400, GL_RGBA, GL_UNSIGNED_BYTE, (void *) 0xa0bbc00c);
 		Gdx.app.log("readPixels3 to buffer","complete\n\n===");
 	}
 
 	private void readPixels4() { //this will work
 		Gdx.app.log("readPixels4 ##GLES20","start\n\n---");
 		Gdx.gl.glPixelStorei(GL20.GL_PACK_ALIGNMENT, 1);
-		GLES20.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, notDirectlyAllocatedByteBuffer);
+		GLES20.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, notDirectlyAllocatedByteBuffer); //glReadPixels(0, 0, 500, 400, GL_RGBA, GL_UNSIGNED_BYTE, (void *) 0xa0af800c);
 		Gdx.app.log("readPixels4 to notDirectlyAllocatedByteBuffer","complete\n\n===");
 	}
 
 	private void readPixels5() { //this will fail
 		Gdx.app.log("readPixels5 ##Gdx.gl","start\n\n---");
 		Gdx.gl.glPixelStorei(GL20.GL_PACK_ALIGNMENT, 1);
-		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, buffer);
+		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, buffer); //glReadPixels(0, 0, 500, 400, GL_RGBA, GL_UNSIGNED_BYTE, (void *) 0x00000000);
 		Gdx.app.log("readPixels5 to buffer","complete\n\n===");
 	}
 
 	private void readPixels6() { //this will fail
 		Gdx.app.log("readPixels6 ##Gdx.gl","start\n\n---");
 		Gdx.gl.glPixelStorei(GL20.GL_PACK_ALIGNMENT, 1);
-		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, notDirectlyAllocatedByteBuffer);
+		Gdx.gl.glReadPixels(0, 0, width, height, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, notDirectlyAllocatedByteBuffer); //glReadPixels(0, 0, 500, 400, GL_RGBA, GL_UNSIGNED_BYTE, (void *) 0x00000000);
 		Gdx.app.log("readPixels6 to notDirectlyAllocatedByteBuffer","complete\n\n===");
 	}
 
